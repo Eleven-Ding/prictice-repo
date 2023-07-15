@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import React from "react";
 import "./App.css";
 
+// const a = "你好呀"
 
 function App() {
     return (

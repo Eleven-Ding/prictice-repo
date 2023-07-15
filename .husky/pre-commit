@@ -2,7 +2,9 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # prettier 格式检查
-npx prettier ./src/**/*.{js,jsx} --write
+# npx prettier ./src/**/*.{js,jsx} --write
 
 # eslint 语法检测
-npx eslint ./src/**/*.{js,jsx}
+# npx eslint ./src/**/*.{js,jsx} --fix
+
+npx lint-staged
