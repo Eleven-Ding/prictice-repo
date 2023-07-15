@@ -4,4 +4,3 @@
 # prettier 格式检查
 npx prettier ./src/**/*.js --write
 
-# 
