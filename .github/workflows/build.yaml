@@ -3,7 +3,7 @@ run-name: CI on branch ${{github.ref}} 🚀
 on: [push]
 jobs:
   CI:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v3
