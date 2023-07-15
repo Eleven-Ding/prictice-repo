@@ -12,6 +12,6 @@ jobs:
       - name: Check Lint
         run: npx eslint
       - name: Check Code Format
-        run: npx prettier --check ./
+        run: npx prettier --write ./
       - name: Check Simple Build # 对项目直接编译做一次简单的打包操作，防止出现项目格式没有问题但是打包出现问题
         run: npm run build
