@@ -2,5 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # prettier 格式检查
-npx prettier ./src/**/*.js --write
+npx prettier ./src/**/*.{js,jsx} --write
 
