@@ -1,18 +1,17 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: CI on branch ${{github.ref}} 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+  CI:
+    runs-on: unbuntu-latest
+    steps: 
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Install Packages
+        run: npm install
+      - name: Check Lint
+        run: npx eslint
+      - name: Check Code Format
+        run: npx prettier --check ./
+      - name: Check Simple Build # 对项目直接编译做一次简单的打包操作，防止出现项目格式没有问题但是打包出现问题
+        run: npm run build
